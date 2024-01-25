@@ -1,0 +1,29 @@
+group:
+  repos: |
+    ChristianPejrup/github-actions-playground
+  
+  files:
+    - source: repository_template/.github/workflows/ci.yml
+      dest: .github/workflows/ci.yml
+      replace: true
+    
+    - source: repository_template/.github/workflows/ci-template.yml
+      dest: .github/workflows/ci-template.yml
+      replace: true
+      deleteOrphaned: true
+
+    - source: repository_template/.editorconfig
+      dest: .editorconfig
+      replace: true
+    
+    - source: repository_template/.gitattributes
+      dest: .gitattributes
+      replace: true
+    
+    - source: repository_template/.gitignore
+      dest: .gitignore
+      replace: true
+    
+    - source: repository_template/readme.md
+      dest: readme.md
+      replace: false

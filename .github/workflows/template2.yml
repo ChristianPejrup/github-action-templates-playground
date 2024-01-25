@@ -1,0 +1,19 @@
+name: Output Text Reverse
+
+on:
+  workflow_call:
+    inputs:
+      first_parameter:
+        type: string 
+        required: true
+      second_parameter:
+        type: string 
+        required: true
+
+jobs:
+  output_parameters:
+    runs-on: ubuntu-latest
+    steps:
+      - name: write_output_reverse
+        run: |
+          echo "${{ inputs.second_parameter }} ${{ inputs.first_parameter }}"

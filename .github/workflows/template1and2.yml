@@ -16,8 +16,8 @@ jobs:
     steps:
       - name: write_output
         run: |
-          echo v1
-          
+          echo v3
+
   text_output:
     uses: ./.github/workflows/template1.yml
     with:

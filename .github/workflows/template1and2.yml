@@ -19,14 +19,14 @@ jobs:
           echo v4
 
   text_output:
-    uses: ./.github/workflows/template1.yml
+    uses: ChristianPejrup/github-action-templates-playground/.github/workflows/template1.yml
     with:
       first_parameter: ${{ inputs.first_parameter }}
       second_parameter: ${{ inputs.second_parameter }}
 
-  test_output_reverse:
-    uses: ./.github/workflows/template2.yml
-    with:
-      first_parameter: ${{ inputs.first_parameter }}
-      second_parameter: ${{ inputs.second_parameter }}
+  # test_output_reverse:
+  #   uses: ./.github/workflows/template2.yml
+  #   with:
+  #     first_parameter: ${{ inputs.first_parameter }}
+  #     second_parameter: ${{ inputs.second_parameter }}
     

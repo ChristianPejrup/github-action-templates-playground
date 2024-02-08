@@ -11,6 +11,13 @@ on:
         required: true
 
 jobs:
+  output_parameters:
+    runs-on: ubuntu-latest
+    steps:
+      - name: write_output
+        run: |
+          echo v1
+          
   text_output:
     uses: ./.github/workflows/template1.yml
     with:

@@ -1,0 +1,25 @@
+repository:
+  name: github-action-templates-playground
+  description: Repository for demonstrating how Github action templates can be shared
+  private: false
+  has_issues: true
+  has_projects: true
+  has_wiki: false
+
+branches:
+  - name: master
+    protection:
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+      required_status_checks:
+        strict: true
+      enforce_admins: true
+      restrictions: null
+  - name: release/*
+    protection:
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+      required_status_checks:
+        strict: true
+      enforce_admins: true
+      restrictions: null

@@ -1,0 +1,38 @@
+name: Set template version
+
+on:
+  push:
+    branches:
+      - release/*
+      - master
+
+jobs:
+  set_version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.11.0
+        with:
+          versionSpec: '5.x'
+      
+      - name: Determine version
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v0.11.0
+
+      - name: Upsert major version tag
+        uses: rickstaa/action-create-tag@v1
+        with:
+          tag: v${{ steps.gitversion.outputs.major }}
+          message: "Version v${{ steps.gitversion.outputs.major }}.${{ steps.gitversion.outputs.minor }}"
+          force_push_tag: true
+      
+      - name: Create minor version tag
+        uses: rickstaa/action-create-tag@v1
+        with:
+          tag: v${{ steps.gitversion.outputs.major }}.${{ steps.gitversion.outputs.minor }}
+          message: "Version v${{ steps.gitversion.outputs.major }}.${{ steps.gitversion.outputs.minor }}"
+          tag_exists_error: false

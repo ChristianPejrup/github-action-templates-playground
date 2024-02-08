@@ -1,23 +1,23 @@
-name: Syncronize Repositories
+# name: Syncronize Repositories
 
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - master
+# on:
+#   workflow_dispatch:
+#   push:
+#     branches:
+#       - master
   
-jobs:
-  sync:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@master
-        with:
-          fetch-depth: 0
+# jobs:
+#   sync:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout Repository
+#         uses: actions/checkout@master
+#         with:
+#           fetch-depth: 0
 
-      - name: Syncronize Repositories
-        uses: BetaHuhn/repo-file-sync-action@latest
-        env:
-          GH_PAT: ${{ secrets.REPO_SYNC_TOKEN }}
-          COMMIT_EACH_FILE: false
+#       - name: Syncronize Repositories
+#         uses: BetaHuhn/repo-file-sync-action@latest
+#         env:
+#           GH_PAT: ${{ secrets.REPO_SYNC_TOKEN }}
+#           COMMIT_EACH_FILE: false
       

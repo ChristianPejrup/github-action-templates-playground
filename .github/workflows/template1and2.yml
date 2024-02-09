@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: write_output
         run: |
-          echo v4
+          echo v5
 
   # text_output:
     # uses: ChristianPejrup/github-action-templates-playground/.github/workflows/template1.yml@v0
